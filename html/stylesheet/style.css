@@ -41,6 +41,7 @@ h4{
     align-items: center;
     max-width: 80rem;
     margin: 0 auto;
+    padding: 2rem;
 }
 .container > *{
     width: 100%;
