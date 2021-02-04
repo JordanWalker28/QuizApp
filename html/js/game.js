@@ -10,33 +10,16 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions =[];
 
-let questions = [
+let questions = [];
 
-    {
-        question: "Who wrote Star Wars?",
-        choice1:"George Lucas",
-        choice2:"Matt Hancock",
-        choice3:"Hayden Christianson",
-        choice4:"Harrison Ford",
-        answer: 1
-    },
-    {
-        question: "What is 10 * 10?",
-        choice1:"10",
-        choice2:"100",
-        choice3:"1000",
-        choice4:"10000",
-        answer: 2
-    },
-    {
-        question: "Where is Blencathra?",
-        choice1:"Cumbria",
-        choice2:"Scotland",
-        choice3:"Wales",
-        choice4:"Ireland",
-        answer: 1
-    }
-]
+fetch("../json/questions.json").then(res => {
+    return res.json();
+}).then(loadedQuestions => {
+    questions = loadedQuestions;
+    startGame();
+}).catch(err => {
+    console.error(err);
+});
 
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
@@ -101,5 +84,3 @@ incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 }
-
-startGame();
