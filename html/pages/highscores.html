@@ -4,11 +4,18 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="/html/stylesheet/style.css">
+        <link rel="stylesheet" href="/html/stylesheet/style.css"/>
+        <link rel="stylesheet" href="/html/stylesheet/highscores.css">
     </head>
     <body>
-        <a class="btn" href="../index.html">Home</a>
-        <h1>High Scores</h1>
+        <div class="container">
+            <div id="highScores" class="flex-center flex-column">
+              <h1 id="finalScore">High Scores</h1>
+                <ul id="highScoresList"></ul>
+
+              <a class="btn" href="/html/index.html">Go Home</a>
+            </div>
+          </div>
+        <script src="/html/js/highScores.js"></script>
     </body>
 </html>
